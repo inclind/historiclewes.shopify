@@ -5,7 +5,7 @@
   "author": "Phil Everton <phil@inclind.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/inclind/historiclewes.shopify.git"
+    "url": "git+https://github.com/inclind/historiclewes.shopify.git"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -17,5 +17,10 @@
     "growl": "~1.7",
     "grunt-shopify": "~0.6.4"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/inclind/historiclewes.shopify/issues"
+  },
+  "homepage": "https://github.com/inclind/historiclewes.shopify#readme"
 }
+
