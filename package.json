@@ -1,0 +1,21 @@
+{
+  "name": "historic-lewes-shopify",
+  "version": "0.0.1",
+  "description": "A shopify theme for Historic Lewes",
+  "author": "Phil Everton <phil@inclind.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inclind/historiclewes.shopify.git"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-sass": "~0.9.2",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "growl": "~1.7",
+    "grunt-shopify": "~0.6.4"
+  },
+  "license": "MIT"
+}
