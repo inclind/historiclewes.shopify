@@ -2,6 +2,8 @@
 
 Create a **keys.json** file in the root dir and use the API key and pw from https://historic-lewes.myshopify.com/admin/apps/private/16949412
 
+**keys.json** is included in the **.gitignore** and should not be committed.
+
 ##keys.json
 
 ```
