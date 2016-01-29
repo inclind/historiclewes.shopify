@@ -1,0 +1,70 @@
+#logo {
+  position:absolute;
+  z-index:10;
+  top:0;
+  left:0;
+  background:transparent url({{ 'logo-bg.png' | asset_url }}) left bottom no-repeat;
+  padding:19px 19px 22px 19px;
+  img {
+    width:93px;
+    height:auto;
+  }
+  .header-logo {
+    margin:0;
+  }
+}
+
+.site-header {
+  padding:0;
+  .wrapper {
+    .grid--full {
+      position:relative;
+      .large--text-right {
+      padding:8px 0;
+      }
+    }
+  }
+}
+
+.site-nav {
+  margin-left:135px;
+}
+
+#top {
+  background-color:{{ settings.color_header_cart_search }};
+  color:{{ settings.color_secondary }};
+  font-size:12px;
+  .wrapper {
+    padding-top:0.5em;
+    padding-bottom:0.5em;
+  }
+  a {
+    color:{{ settings.color_secondary }};
+    display:inline-block;
+    padding:1em;
+    font-size:12px;
+    &:hover {
+      i {
+        text-decoration:underline;
+      }
+    }
+  }
+}
+
+/*added icons*/
+@font-face {
+  font-family: "icons_new";
+  src: url('{{ 'entypo.eot' | asset_url }}');
+  src: url('{{ 'entypo.eot' | asset_url }}#iefix') format("embedded-opentype"),
+       url('{{ 'entypo.woff' | asset_url }}') format("woff"),
+       url('{{ 'entypo.ttf' | asset_url }}') format("truetype"),
+       url('{{ 'entypo.svg' | asset_url }}#timber-icons') format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.icons {
+  &:before {
+    font-family:icons_new;
+  }
+}
+.icon-arrow-bold-left:before { content: "\e611"; }

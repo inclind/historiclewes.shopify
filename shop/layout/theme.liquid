@@ -38,6 +38,7 @@
 
   <!-- CSS ================================================== -->
   {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'custom.scss.css' | asset_url | stylesheet_tag }}
   {% include 'google-fonts' %}
 
   <!-- Header hook for plugins ================================================== -->
@@ -56,17 +57,27 @@
   {{ '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js' | script_tag }}
   {{ 'modernizr.min.js' | asset_url | script_tag }}
 
-  <!-- Added With Grunt -->
-
 </head>
 
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
+{% if settings.footer_quicklinks_enable %}
+<div id="top">
+<div class="wrapper">
+<div class="grid--full">
+  <div class="grid-item medium--full large--full">
+      <a href="https://www.historiclewes.org"><span class="icons icon-arrow-bold-left"></span> <i>Return to Historic Lewes</i></a>
+  </div>
+  </div>
+  </div>
+  </div>
+{% endif %}
+
 
   <header class="site-header" role="banner">
     <div class="wrapper">
-
       <div class="grid--full">
         <div class="grid-item large--one-half">
+          <div id="logo">
           {% if template == 'index' %}
             <h1 class="header-logo" itemscope itemtype="http://schema.org/Organization">
           {% else %}
@@ -84,6 +95,7 @@
           {% else %}
             </div>
           {% endif %}
+          </div>
         </div>
 
         <div class="grid-item large--one-half text-center large--text-right">
