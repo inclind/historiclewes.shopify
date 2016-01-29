@@ -1,18 +1,50 @@
-#logo {
-  position:absolute;
-  z-index:10;
-  top:0;
-  left:0;
-  background:transparent url({{ 'logo-bg.png' | asset_url }}) left bottom no-repeat;
-  padding:19px 19px 22px 19px;
-  img {
-    width:93px;
-    height:auto;
-  }
-  .header-logo {
-    margin:0;
+/*============================================================================
+  #Breakpoint and Grid Variables
+==============================================================================*/
+$viewportIncrement: 1px;
+
+$small: 480px;
+$medium: 768px;
+$large: 769px;
+
+$postSmall: $small + $viewportIncrement;
+$preMedium: $medium - $viewportIncrement;
+$preLarge: $large - $viewportIncrement;
+
+/*================ The following are dependencies of csswizardry grid ================*/
+$breakpoints: (
+  'small' '(max-width: #{$small})',
+  'medium' '(min-width: #{$postSmall}) and (max-width: #{$medium})',
+  'medium-down' '(max-width: #{$medium})',
+  'large' '(min-width: #{$large})'
+);
+$breakpoint-has-widths: ('small', 'medium', 'medium-down', 'large');
+$breakpoint-has-push:  ('medium', 'medium-down', 'large');
+$breakpoint-has-pull:  ('medium', 'medium-down', 'large');
+
+/*============================================================================
+  Dependency-free breakpoint mixin
+// http://blog.grayghostvisuals.com/sass/sass-media-query-mixin/
+==============================================================================*/
+$min: min-width;
+$max: max-width;
+@mixin at-query ($constraint, $viewport1, $viewport2:null) {
+  @if $constraint == $min {
+    @media screen and ($min: $viewport1) {
+      @content;
+    }
+  } @else if $constraint == $max {
+    @media screen and ($max: $viewport1) {
+      @content;
+    }
+  } @else {
+    @media screen and ($min: $viewport1) and ($max: $viewport2) {
+      @content;
+    }
   }
 }
+
+
 
 .site-header {
   padding:0;
@@ -26,8 +58,38 @@
   }
 }
 
-.site-nav {
-  margin-left:135px;
+/*large up*/
+@include at-query ($min, $large) {
+  #logo {
+    position:absolute;
+    z-index:10;
+    top:0;
+    left:0;
+    background:transparent url({{ 'logo-bg.png' | asset_url }}) left bottom no-repeat;
+    padding:19px 19px 22px 19px;
+    img {
+      width:93px;
+      height:auto;
+    }
+    .header-logo {
+      margin:0;
+    }
+  }
+  .site-nav {
+    margin-left:135px;
+  }
+}
+
+/*medium down*/
+@include at-query ($max, $medium) {
+  .site-header {
+    background-color:transparent;
+  }
+  #top {
+    .wrapper {
+      padding-left:0;
+    }
+  }
 }
 
 #top {
@@ -48,6 +110,12 @@
         text-decoration:underline;
       }
     }
+  }
+}
+
+.mobileNavBar-link {
+  .icon-hamburger, .icon-cart {
+    color:{{ settings.color_secondary }};
   }
 }
 

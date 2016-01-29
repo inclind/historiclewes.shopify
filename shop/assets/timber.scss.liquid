@@ -2358,7 +2358,7 @@ $shareBorderColor: #ececec;
 }
 
 /*================ Small screen nav styles ================*/
-@include at-query ($max, $small) {
+@include at-query ($max, $medium) {
   .nav-bar {
     .show-nav & {
       bottom: 0;
@@ -2552,7 +2552,7 @@ $shareBorderColor: #ececec;
   }
 
   /*================ Small mobile nav bar ================*/
-  @include at-query ($max, $small) {
+  @include at-query ($max, $medium) {
     position: fixed;
     top: 0;
     left: 0;
@@ -3254,7 +3254,7 @@ a.remove {
   color: $colorTextBody;
 }
 
-@include at-query ($max, $small) {
+@include at-query ($max, $medium) {
   body {
     padding-top: $mobileNavBarHeight;
   }
