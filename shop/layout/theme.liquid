@@ -38,7 +38,7 @@
 
   <!-- CSS ================================================== -->
   {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
-  {{ 'custom.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'lhs.scss.css' | asset_url | stylesheet_tag }}
   {% include 'google-fonts' %}
 
   <!-- Header hook for plugins ================================================== -->
@@ -60,19 +60,17 @@
 </head>
 
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
-{% if settings.footer_quicklinks_enable %}
-<div id="top">
-<div class="wrapper">
-<div class="grid--full">
-  <div class="grid-item medium--full large--full">
-      <a href="https://www.historiclewes.org"><span class="icons icon-arrow-bold-left"></span> <i>Return to Historic Lewes</i></a>
+  {% if settings.footer_quicklinks_enable %}
+  <div id="top">
+    <div class="wrapper">
+      <div class="grid--full">
+        <div class="grid-item medium--full large--full">
+            <a href="https://www.historiclewes.org"><span class="icons icon-arrow-bold-left"></span> <i>Return to Historic Lewes</i></a>
+        </div>
+      </div>
+    </div>
   </div>
-  </div>
-  </div>
-  </div>
-{% endif %}
-
-
+  {% endif %}
   <header class="site-header" role="banner">
     <div class="wrapper">
       <div class="grid--full">
@@ -184,7 +182,7 @@
         {% endif %}
 
         {% if settings.footer_content_enable or settings.footer_social_enable %}
-        <div class="grid-item medium--one-half large--five-twelfths">
+        <div class="grid-item medium--one-half large--five-twelfths text-center">
           <h3>{{ 'layout.footer.get_in_touch' | t }}</h3>
           {% if settings.footer_content_enable %}
             <p>
@@ -296,9 +294,6 @@
           <ul class="legal-links inline-list">
             <li>
               &copy; {{ 'now' | date: "%Y" }} {{ shop.name | link_to: '/' }}
-            </li>
-            <li>
-              {{ powered_by_link }}
             </li>
           </ul>
         </div>
