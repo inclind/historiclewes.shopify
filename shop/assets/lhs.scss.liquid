@@ -44,6 +44,39 @@ $max: max-width;
   }
 }
 
+/*================ Typography ================*/
+
+/*============================================================================
+  Get font-families from theme settings
+==============================================================================*/
+{% if settings.type_base_family contains 'Google' %}
+  {% assign type_base_parts = settings.type_base_family | split: '_' %}
+  {% assign type_base_name = type_base_parts[1] %}
+  {% capture base_family %}"{{ type_base_name | split: ':' | first | replace: '+', ' ' }}"{% if type_base_parts.last == 'serif' %}, serif {% else %}, "HelveticaNeue", "Helvetica Neue", sans-serif{% endif %}{% endcapture %}
+{% else %}
+  {% assign base_family = settings.type_base_family %}
+{% endif %}
+
+{% if settings.type_header_family contains 'Google' %}
+  {% assign type_header_parts = settings.type_header_family | split: '_' %}
+  {% assign type_header_name = type_header_parts[1] %}
+  {% capture header_family %}"{{ type_header_name | split: ':' | first | replace: '+', ' ' }}"{% if type_header_parts.last == 'serif' %}, serif {% else %}, "HelveticaNeue", "Helvetica Neue", sans-serif{% endif %}{% endcapture %}
+  {% assign header_weight = type_header_parts[2] %}
+{% else %}
+  {% assign header_family = settings.type_header_family %}
+  {% assign header_weight = 700 %}
+{% endif %}
+
+{% if settings.type_accent_family contains 'Google' %}
+  {% assign type_accent_parts = settings.type_accent_family | split: '_' %}
+  {% assign type_accent_name = type_accent_parts[1] %}
+  {% capture accent_family %}"{{ type_accent_name | split: ':' | first | replace: '+', ' ' }}"{% if type_accent_parts.last == 'serif' %}, serif {% else %}, "HelveticaNeue", "Helvetica Neue", sans-serif{% endif %}{% endcapture %}
+  {% assign accent_weight = type_accent_parts[2] %}
+{% else %}
+  {% assign accent_family = settings.type_accent_family %}
+  {% assign accent_weight = 500 %}
+{% endif %}
+
 /*added icons*/
 @font-face {
   font-family: "icons_new";
@@ -131,6 +164,49 @@ $max: max-width;
 
 .site-header input::-moz-placeholder {
   color:#CCCCCC;
+}
+
+.featured-box--title {
+  text-transform: uppercase;
+  color: {{ settings.color_primary }};
+}
+
+a.product-grid-item {
+  color: {{ settings.color_primary }};
+}
+
+.product-description {
+  color: {{ settings.color_primary }};
+}
+
+.btn-secondary {
+  color: #FFFFFF;
+  background-color:#dbad0b;
+}
+
+.breadcrumb {
+  font-weight:bold;
+}
+
+.product-item--price {
+  .h1 {
+    font-family: {{ base_family }};
+    font-size:30px;
+  }
+}
+
+#productPrice.h1 {
+  font-family: {{ base_family }};
+  font-size:34px;
+}
+
+h1, .h1, #shopify-product-reviews .spr-header-title {
+  font-size: 30px;
+}
+
+footer h3 {
+  font-family: {{ base_family }};
+  text-transform:uppercase;
 }
 
 /*large up*/

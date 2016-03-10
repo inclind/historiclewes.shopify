@@ -32,7 +32,7 @@
 
   <div class="grid-item large--three-fifths">
 
-    <h2 itemprop="name">{{ product.title }}</h2>
+    <h1 itemprop="name">{{ product.title }}</h1>
 
     {% if settings.product_vendor_enable %}
       <p class="product-meta" itemprop="brand">{{ product.vendor }}</p>
@@ -91,8 +91,7 @@
           <input type="number" id="quantity" name="quantity" value="1" min="1" class="quantity-selector">
         {% endif %}
 
-        <button type="submit" name="add" id="addToCart" class="btn">
-          <span class="icon icon-cart"></span>
+        <button type="submit" name="add" id="addToCart" class="btn btn-secondary">
           <span id="addToCartText">{{ 'products.product.add_to_cart' | t }}</span>
         </button>
         {% if settings.product_quantity_message %}
