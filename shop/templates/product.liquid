@@ -90,8 +90,8 @@
 
         {% if product.type == 'Donation' %}
           <div class="donate">
-            <label for="quantity" class="quantity-selector">Donation Amount</label>
-            <input type="number" id="quantity" name="quantity" value="5" min="1" class="quantity-selector">
+            <label for="quantity" class="quantity-selector"><b>Donation Amount</b></label>
+            <span><b>$</b><input type="number" id="quantity" name="quantity" value="5" min="1" class="quantity-selector"><b>.00</b></span>
           </div>
         {% endif %}
         {% if settings.product_quantity_enable %}
@@ -123,7 +123,7 @@
 </div>
 
 {% if settings.related_products_enable %}
-  {% assign grid_item_width = 'large--one-fifth medium--one-third small--one-half' %}
+  {% assign grid_item_width = 'large--one-quarter medium--one-third small--one-half' %}
   {% include 'related-products' %}
 {% endif %}
 

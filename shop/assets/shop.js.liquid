@@ -290,11 +290,11 @@ timber.sliders = function () {
       };
 
   if ($slider.length) {
-    
+
     if ($slides.length === 1) {
-      sliderArgs.touch = false; 
+      sliderArgs.touch = false;
     }
-    
+
     $(window).on('load', function() {
       $slider.flexslider(sliderArgs);
     });
@@ -408,12 +408,12 @@ timber.socialSharing = function () {
 timber.equalHeights = function () {
   var $featuredBoxImageArray = [];
   var $featuredBoxArray = [];
-    
+
   timber.cache.$featuredContainer.each(function() {
     $featuredBoxImageArray.push($(this).find('.featured-box--image'));
     $featuredBoxArray.push($(this).find('.featured-box'));
   });
- 
+
   $(window).load(function() {
     resizeElements();
   });

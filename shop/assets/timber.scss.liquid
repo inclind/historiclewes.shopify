@@ -2742,6 +2742,24 @@ a.product-grid-item,
   color: $colorTextBody;
   margin-bottom: $gutter*2;
 
+  /* added */
+  padding: 15px 0;
+  border: 1px solid #d9d0cb;
+  background-color: rgba(0,0,0,.02);
+  text-align:center;
+  img {
+    padding:0 15px;
+  }
+  p {
+    padding:0 10px;
+    @media all and (min-width: 890px) {
+      min-height: 6.5em;
+    }
+    @media only screen and (max-width: 890px) and (min-width: 481px) {
+      min-height:7em;
+    }
+  }
+
   &:hover img {
     opacity: 0.9;
     @include transition(opacity 0.05s ease-out);
@@ -4284,5 +4302,41 @@ img.mfp-img {
 .shopify-name {
   .modern & {
     @include visuallyHidden;
+  }
+}
+
+#donate {
+  .donate {
+    span {
+      input {
+        width:auto;
+        display:inline;
+      }
+    }
+  }
+
+  fieldset {
+    border:none;
+    label {
+      input {
+        margin-right:0.5em;
+      }
+    }
+  }
+
+  span {
+    label {
+      input {
+        margin-right:0.5em;
+      }
+    }
+  }
+
+  #infiniteoptions-container > div > label {
+    font-weight:bold;
+    display:block;
+    border-bottom:1px solid #EDEDED;
+    margin-bottom:1em;
+    margin-top:2em;
   }
 }

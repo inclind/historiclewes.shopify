@@ -11,7 +11,7 @@
 {% assign header_title = collections[featured_row].title %}
 {% assign more_link = collections[featured_row].url %}
 
-{% capture row_limit %}{{ row_limit_setting | times: 5 }}{% endcapture %}
+{% capture row_limit %}{{ row_limit_setting | times: 4 }}{% endcapture %}
 
 <div class="section-header">
   {% if header_title %}
@@ -27,7 +27,7 @@
 
 <div class="grid-uniform row-negative-bottom">
   {% for product in collections[featured_row].products limit: row_limit %}
-    {% assign grid_item_width = 'large--one-fifth medium--one-third small--one-half' %}
+    {% assign grid_item_width = 'large--one-quarter medium--one-third small--one-half' %}
     {% assign current_collection = collections[featured_row] %}
     {% include 'product-grid-item' %}
   {% endfor %}

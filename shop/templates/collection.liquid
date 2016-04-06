@@ -49,11 +49,11 @@
     <div class="grid-uniform">
 
       {% for product in collection.products %}
-        
+
         {% if has_sidebar %}
-          {% assign grid_item_width = 'large--one-quarter medium--one-third small--one-half' %}
+          {% assign grid_item_width = 'large--one-third medium--one-half' %}
         {% else %}
-          {% assign grid_item_width = 'large--one-fifth medium--one-third small--one-half' %}
+          {% assign grid_item_width = 'large--one-fourth medium--one-half' %}
         {% endif %}
         {% include 'product-grid-item' %}
 
